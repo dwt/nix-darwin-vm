@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<openbox_menu>
+<menu id="root-menu" label="lix">
+  <item label="Alacritty"><action name="Execute" command="alacritty" /></item>
+  <item label="Fontforge"><action name="Execute" command="fontforge" /></item>
+  <item label="Reconfigure"><action name="Reconfigure" /></item>
+  <item label="Exit"><action name="Execute" command="sudo poweroff" /></item>
+</menu>
+</openbox_menu>
