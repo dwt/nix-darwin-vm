@@ -1,18 +1,3 @@
-# Kudos to
-# https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
-#
-# If you do not have a remote builder setup for linux builds, run a linux builder
-#  nix run nixpkgs#darwin.linux-builder
-#
-# Then run your custom NixOS VM
-#  nix run .#textVM
-# Profit!
-#
-# Or build your custom NixOS VM
-#  nix build .#textVM
-# and then run it
-#  ./result/bin/run-nixos-vm
-#
 {
   # comment out to use whatever you have built your system with
   # inputs.nixpkgs.url = "nixpkgs-dev";
