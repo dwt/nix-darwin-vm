@@ -2,6 +2,7 @@
   lib,
   pkgs,
   withNaturalScrolling,
+  withNaturalKeyboard,
   userName,
   ...
 }:
@@ -14,6 +15,7 @@
     swaybg
     bemenu
     alacritty
+    # REFACT pull out into it's own module?
     fontforge
     fontforge-gtk
     gnused
@@ -30,6 +32,7 @@
 
   security.polkit.enable = true;
   hardware.graphics.enable = true; # when using QEMU KVM
+
   # TODO: replace greetd with emptty?
   services.greetd = {
     enable = true;
@@ -59,9 +62,13 @@
   #  [[ "$(tty)" == /dev/tty1 ]] && ${nixpkgs.lib.getBin weston}/bin/weston
   #'';
 
-  system.userActivationScripts.lixColoredBasicWM = ''
-    mkdir -p ~/.config/labwc
-    cp ${./menu.xml} ~/.config/labwc/menu.xml
-    cp ${./autostart} ~/.config/labwc/autostart
-  '';
+  system.userActivationScripts.lixColoredBasicWM =
+    ''
+      mkdir -p ~/.config/labwc
+      cp ${./menu.xml} ~/.config/labwc/menu.xml
+      cp ${./autostart} ~/.config/labwc/autostart
+    ''
+    + lib.optionalString withNaturalKeyboard ''
+      echo 'XKB_DEFAULT_LAYOUT=de' > ~/.config/labwc/environment
+    '';
 }

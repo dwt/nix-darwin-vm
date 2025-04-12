@@ -26,6 +26,7 @@
                     hostName = "lix";
                     userPass = "idefix";
                     withNaturalScrolling = true;
+                    withNaturalKeyboard = true;
                   };
                 }
                 {
