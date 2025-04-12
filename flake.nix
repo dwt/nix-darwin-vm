@@ -25,7 +25,6 @@
                     userName = "obe";
                     hostName = "lix";
                     userPass = "idefix";
-                    withAutoShutdown = true;
                     withNaturalScrolling = true;
                   };
                 }
