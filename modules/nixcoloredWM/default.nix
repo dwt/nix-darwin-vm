@@ -62,13 +62,10 @@
   #  [[ "$(tty)" == /dev/tty1 ]] && ${nixpkgs.lib.getBin weston}/bin/weston
   #'';
 
-  system.userActivationScripts.lixColoredBasicWM =
-    ''
-      mkdir -p ~/.config/labwc
-      cp ${./menu.xml} ~/.config/labwc/menu.xml
-      cp ${./autostart} ~/.config/labwc/autostart
-    ''
-    + lib.optionalString withNaturalKeyboard ''
-      echo 'XKB_DEFAULT_LAYOUT=de' > ~/.config/labwc/environment
-    '';
+  system.userActivationScripts.lixColoredBasicWM = ''
+    mkdir -p ~/.config/labwc
+    cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
+    cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
+    echo '${if withNaturalKeyboard then "XKB_DEFAULT_LAYOUT=de" else ""}' > ~/.config/labwc/environment
+  '';
 }
