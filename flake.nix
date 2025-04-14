@@ -25,6 +25,7 @@
                     userName = "obe";
                     hostName = "lix";
                     userPass = "idefix";
+                    userShell = "zsh";
                     withNaturalScrolling = true;
                     withNaturalKeyboard = true;
                   };

@@ -2,6 +2,8 @@
   hostName,
   userName,
   userPass,
+  userShell,
+  pkgs,
   ...
 }:
 {
@@ -20,9 +22,11 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Put user in wheel group to…
     password = userPass;
+    shell = pkgs."${userShell}";
   };
   # … enable passwordless ‘sudo’ for user
   security.sudo.wheelNeedsPassword = false;
+  programs."${userShell}".enable = true;
 
   nix.settings.experimental-features = "nix-command flakes";
 }
