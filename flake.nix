@@ -27,7 +27,8 @@
                     userPass = "idefix";
                     userShell = "zsh";
                     withNaturalScrolling = true;
-                    withNaturalKeyboard = true;
+                    withNaturalKeyboard = false;
+                    wm = "twm";
                   };
                 }
                 {
@@ -54,6 +55,10 @@
 
         wayland = self.lib.nixosVM system [
           modules/wayland
+        ];
+
+        xserver = self.lib.nixosVM system [
+          modules/xserver
         ];
       });
     };
