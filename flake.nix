@@ -52,8 +52,8 @@
           modules/autoShutdownOnLoggout.nix
         ];
 
-        graphic = self.lib.nixosVM system [
-          modules/nixColoredWM
+        wayland = self.lib.nixosVM system [
+          modules/wayland
         ];
       });
     };
