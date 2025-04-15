@@ -18,7 +18,6 @@
     # REFACT pull out into it's own module?
     fontforge
     fontforge-gtk
-    gnused
   ];
 
   services.libinput.touchpad.naturalScrolling = withNaturalScrolling;

@@ -4,6 +4,7 @@
     tmux
     zsh
     neovim
+    gnused
     silver-searcher
   ];
 }
