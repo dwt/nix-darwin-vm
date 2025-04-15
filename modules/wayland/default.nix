@@ -62,7 +62,7 @@
   #  [[ "$(tty)" == /dev/tty1 ]] && ${nixpkgs.lib.getBin weston}/bin/weston
   #'';
 
-  system.userActivationScripts.lixColoredBasicWM = ''
+  system.userActivationScripts.setupDesktop = ''
     mkdir -p ~/.config/labwc
     cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
     cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart

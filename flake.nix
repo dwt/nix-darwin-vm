@@ -27,7 +27,8 @@
                     userPass = "idefix";
                     userShell = "zsh";
                     withNaturalScrolling = true;
-                    withNaturalKeyboard = true;
+                    withNaturalKeyboard = false;
+                    wm = "twm";
                   };
                 }
                 {
@@ -52,8 +53,12 @@
           modules/autoShutdownOnLoggout.nix
         ];
 
-        graphic = self.lib.nixosVM system [
-          modules/nixColoredWM
+        wayland = self.lib.nixosVM system [
+          modules/wayland
+        ];
+
+        xserver = self.lib.nixosVM system [
+          modules/xserver
         ];
       });
     };
