@@ -27,7 +27,8 @@
                     userPass = "idefix";
                     userShell = "zsh";
                     withNaturalScrolling = true;
-                    withNaturalKeyboard = false;
+                    withNaturalKeyboard = true;
+                    # REFACT move as default into xserver module? --mh
                     wm = "twm";
                   };
                 }

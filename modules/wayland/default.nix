@@ -21,6 +21,9 @@
     gnused
   ];
 
+  environment.sessionVariables = {
+    TERMINFO_DIRS = "${pkgs.alacritty.terminfo}/share/terminfo";
+  };
   services.libinput.touchpad.naturalScrolling = withNaturalScrolling;
   services.displayManager = {
     enable = true;
