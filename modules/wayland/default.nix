@@ -70,7 +70,7 @@
       mkdir -p ~/.config/labwc
       cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
       cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
-      cat ${./xkbMacKeyboardConfig} > ${envFile}
+      cp ${./xkbMacKeyboardConfig} ${envFile}
     ''
     + lib.optionalString withNaturalKeyboard ''
       echo XKB_DEFAULT_LAYOUT=de >> ${envFile}
