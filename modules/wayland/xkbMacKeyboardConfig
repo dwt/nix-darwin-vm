@@ -1,0 +1,5 @@
+XKB_DEFAULT_VARIANT=mac
+XKB_DEFAULT_MODEL=apple_laptop
+# lvl3 is the third level of the keyboard, which is used for keys like | {} and []
+# apple:badmap fixes the delete key on apple keyboards
+XKB_DEFAULT_OPTIONS=lv3:ralt_switch,lv3:lalt_switch,apple:badmap

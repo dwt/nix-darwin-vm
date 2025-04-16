@@ -63,18 +63,16 @@
   #'';
 
   system.userActivationScripts.setupDesktop =
+    let
+      envFile = "~/.config/labwc/environment";
+    in
     ''
-      set -x
       mkdir -p ~/.config/labwc
       cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
       cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
+      cat ${./xkbMacKeyboardConfig} > ${envFile}
     ''
-    + lib.optionalString (withNaturalKeyboard) ''
-      {
-        echo XKB_DEFAULT_LAYOUT="de"
-        echo XKB_DEFAULT_VARIANT="mac"
-        echo XKB_DEFAULT_MODEL="apple_laptop"
-        echo XKB_DEFAULT_OPTIONS="lv3:ralt_switch,lv3:lalt_switch,apple:badmap"
-      } > ~/.config/labwc/environment
+    + lib.optionalString withNaturalKeyboard ''
+      echo XKB_DEFAULT_LAYOUT=de >> ${envFile}
     '';
 }
