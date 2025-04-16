@@ -52,10 +52,11 @@
 
   hardware.graphics.enable = true; # when using QEMU KVM
 
-  system.userActivationScripts.setupDesktop = ''
-    cp --symbolic-link --update ${./xsession} ~/.xsession
-  '' + lib.optionalString (wm == "twm") ''
-    cp --symbolic-link --update ${./twmrc} ~/.twmrc
-  '';
+  system.userActivationScripts.setupDesktop =
+    ''
+      cp --symbolic-link --update ${./xsession} ~/.xsession
+    ''
+    + lib.optionalString (wm == "twm") ''
+      cp --symbolic-link --update ${./twmrc} ~/.twmrc
+    '';
 }
-
