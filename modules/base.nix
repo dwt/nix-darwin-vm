@@ -28,5 +28,9 @@
   security.sudo.wheelNeedsPassword = false;
   programs."${userShell}".enable = true;
 
+  system.userActivationScripts.setupShell = pkgs.lib.optionalString (userShell == "zsh") ''
+    touch ~/.zshrc
+  '';
+
   nix.settings.experimental-features = "nix-command flakes";
 }
