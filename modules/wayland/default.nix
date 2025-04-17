@@ -15,9 +15,6 @@
     swaybg
     bemenu
     alacritty
-    # REFACT pull out into it's own module?
-    fontforge
-    fontforge-gtk
     gnused
   ];
 

@@ -81,7 +81,6 @@
             "Hide Iconmgr"         f.hideiconmgr
             ""                     f.nop
             "Xterm"                f.exec "exec xterm -fg maroon -fs 20&"
-            "Fontforge"            f.exec "exec fontforge &"
             ""                     f.nop
             "Kill"                 f.destroy
             "Delete"               f.delete
