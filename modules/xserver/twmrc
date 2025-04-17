@@ -81,6 +81,7 @@
             "Hide Iconmgr"         f.hideiconmgr
             ""                     f.nop
             "Xterm"                f.exec "exec xterm -fg maroon -fs 20&"
+            "Run..."               f.exec "exec bemenu-run&"
             ""                     f.nop
             "Kill"                 f.destroy
             "Delete"               f.delete
