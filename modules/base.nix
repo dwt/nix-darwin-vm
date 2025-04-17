@@ -4,6 +4,7 @@
   userPass,
   userShell,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -26,7 +27,10 @@
   };
   # … enable passwordless ‘sudo’ for user
   security.sudo.wheelNeedsPassword = false;
-  programs."${userShell}".enable = true;
+  # doing this the hard way, because
+  # programs.bash.enable = true; raises an error
+  programs.zsh.enable = ("zsh" == userShell);
+  programs.fish.enable = ("fish" == userShell);
 
   nix.settings.experimental-features = "nix-command flakes";
 }
