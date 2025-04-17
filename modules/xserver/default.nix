@@ -51,7 +51,8 @@
 
   system.userActivationScripts.setupDesktop =
     ''
-      cp --symbolic-link --update ${./xsession} ~/.xsession
+      cp --symbolic-link --update ${./xprofile} ~/.xprofile
+      cp --symbolic-link --update ${./xresources} ~/.Xresources
     ''
     + lib.optionalString (wm == "twm") ''
       cp --symbolic-link --update ${./twmrc} ~/.twmrc
