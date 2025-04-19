@@ -15,7 +15,6 @@
     swaybg
     bemenu
     alacritty
-    gnused
   ];
 
   environment.sessionVariables = {
