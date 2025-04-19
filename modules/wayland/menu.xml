@@ -2,6 +2,7 @@
 <openbox_menu>
 <menu id="root-menu" label="lix">
   <item label="Alacritty"><action name="Execute" command="alacritty" /></item>
+  <item label="Run…"><action name="Execute" command="bemenu-run" /></item>
   <item label="Reconfigure"><action name="Reconfigure" /></item>
   <item label="Poweroff"><action name="Execute" command="sudo poweroff" /></item>
   <item label="Exit"><action name="Exit" /></item>

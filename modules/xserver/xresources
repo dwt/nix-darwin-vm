@@ -1,0 +1,12 @@
+! Use TrueType font
+XTerm*faceName: FreeMonoBold
+XTerm*faceSize: 11
+
+! Set foreground (text) color
+XTerm*foreground: maroon
+
+! (Optional) Background color
+! XTerm*background: black
+
+! Enable anti-aliasing (recommended with TTF)
+XTerm*faceAntialias: true

@@ -50,9 +50,9 @@
         command =
           with pkgs;
           lib.concatStringsSep " " [
-            "${lib.getExe labwc}"
+            (lib.getExe labwc)
             "-s"
-            "${lib.getExe alacritty}"
+            (lib.getExe alacritty)
           ];
       };
     };
