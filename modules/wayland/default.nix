@@ -15,7 +15,6 @@
     swaybg
     bemenu
     alacritty
-    gnused
     wlr-randr
   ];
 
