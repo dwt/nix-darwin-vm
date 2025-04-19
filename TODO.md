@@ -1,0 +1,3 @@
+- labwc config wird nicht korrekt aktualisiert on system activation
+  - Korrekter, wenn das image nicht weggeschmissen wird, kriegt man nicht alle auswirkungen einer neuen version des flakes
+- support fish
