@@ -68,6 +68,7 @@
     in
     ''
       mkdir -p ~/.config/labwc
+      cp --symbolic-link --update ${./rc.xml} ~/.config/labwc/rc.xml
       cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
       cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
       cp ${./xkbMacKeyboardConfig} ${envFile}
