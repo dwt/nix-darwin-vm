@@ -16,6 +16,7 @@
     bemenu
     alacritty
     gnused
+    wlr-randr
   ];
 
   environment.sessionVariables = {
