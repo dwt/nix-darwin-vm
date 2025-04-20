@@ -28,6 +28,7 @@
   security.sudo.wheelNeedsPassword = false;
   programs."${userShell}".enable = true;
 
+  # suppress noisy startup menu when ~/.zshrc is missing
   system.userActivationScripts.setupShell = pkgs.lib.optionalString (userShell == "zsh") ''
     touch ~/.zshrc
   '';
