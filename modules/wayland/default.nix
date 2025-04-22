@@ -75,6 +75,8 @@
       cp ${./xkbMacKeyboardConfig} ${envFile}
     ''
     + lib.optionalString withNaturalKeyboard ''
+      # file is set a=r in nix store, preventing us from adding to it
+      chmod u+w ${envFile}
       echo XKB_DEFAULT_LAYOUT=de >> ${envFile}
     '';
 }
