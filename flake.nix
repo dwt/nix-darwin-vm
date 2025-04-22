@@ -25,7 +25,7 @@
                     userName = "obe";
                     hostName = "lix";
                     userShell = "zsh";
-                    userPass = "lix"; # idefix types strangely
+                    userPass = "lix";
                     withNaturalScrolling = true;
                     withNaturalKeyboard = true;
                     # REFACT move as default into xserver module? --mh
