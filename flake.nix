@@ -24,8 +24,8 @@
                     inherit inputs;
                     userName = "obe";
                     hostName = "lix";
-                    userPass = "idefix";
                     userShell = "zsh";
+                    userPass = "lix";
                     withNaturalScrolling = true;
                     withNaturalKeyboard = true;
                     # REFACT move as default into xserver module? --mh
