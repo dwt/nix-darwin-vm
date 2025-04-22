@@ -32,5 +32,10 @@
   programs.zsh.enable = ("zsh" == userShell);
   programs.fish.enable = ("fish" == userShell);
 
+  # suppress noisy startup menu when ~/.zshrc is missing
+  system.userActivationScripts.setupShell = pkgs.lib.optionalString (userShell == "zsh") ''
+    touch ~/.zshrc
+  '';
+
   nix.settings.experimental-features = "nix-command flakes";
 }

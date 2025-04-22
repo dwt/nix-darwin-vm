@@ -16,6 +16,7 @@
     bemenu
     alacritty
     gnused
+    wlr-randr
   ];
 
   environment.sessionVariables = {
@@ -50,9 +51,9 @@
         command =
           with pkgs;
           lib.concatStringsSep " " [
-            "${lib.getExe labwc}"
+            (lib.getExe labwc)
             "-s"
-            "${lib.getExe alacritty}"
+            (lib.getExe alacritty)
           ];
       };
     };
@@ -68,6 +69,7 @@
     in
     ''
       mkdir -p ~/.config/labwc
+      cp --symbolic-link --update ${./rc.xml} ~/.config/labwc/rc.xml
       cp --symbolic-link --update ${./menu.xml} ~/.config/labwc/menu.xml
       cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
       cp ${./xkbMacKeyboardConfig} ${envFile}

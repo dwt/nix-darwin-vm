@@ -1,0 +1,9 @@
+<keyboard>
+  <default/>
+  <keybind key="W-Return" onRelease="no">
+    <action name="Execute" command="bemenu-run"/>
+  </keybind>
+  <keybind key="W-C-Return" onRelease="no">
+    <action name="Execute" command="alacritty"/>
+  </keybind>
+</keyboard>
