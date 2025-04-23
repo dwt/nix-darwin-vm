@@ -6,7 +6,7 @@ let
   logout = {
     bash = ".bash_logout";
     zsh = ".zlogout";
-  }."${config.userShell}" or (throw "autoShutdownOnLogout not supported for ${config.userShell}");
+  }."${config.local.userShell}" or (throw "autoShutdownOnLogout not supported for ${config.local.userShell}");
 in
 {
   config.system.userActivationScripts.autoShutdown = ''

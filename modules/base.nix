@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options = {
+  options.local = {
     hostName = lib.mkOption {
       description = "The name for the server";
       type = lib.types.str;
@@ -35,26 +35,26 @@
     networking = {
       useDHCP = false;
       interfaces.eth0.useDHCP = true;
-      hostName = config.hostName;
+      hostName = config.local.hostName;
     };
 
     # Create user
-    services.getty.autologinUser = config.userName;
-    users.users.${config.userName} = {
+    services.getty.autologinUser = config.local.userName;
+    users.users.${config.local.userName} = {
       isNormalUser = true;
       extraGroups = [ "wheel" ]; # Put user in wheel group to…
-      password = config.userPass;
-      shell = pkgs."${config.userShell}";
+      password = config.local.userPass;
+      shell = pkgs."${config.local.userShell}";
     };
     # … enable passwordless ‘sudo’ for user
     security.sudo.wheelNeedsPassword = false;
     # doing this the hard way, because
     # programs.bash.enable = true; raises an error
-    programs.zsh.enable = ("zsh" == config.userShell);
-    programs.fish.enable = ("fish" == config.userShell);
+    programs.zsh.enable = ("zsh" == config.local.userShell);
+    programs.fish.enable = ("fish" == config.local.userShell);
 
     # suppress noisy startup menu when ~/.zshrc is missing
-    system.userActivationScripts.setupShell = pkgs.lib.optionalString (config.userShell == "zsh") ''
+    system.userActivationScripts.setupShell = pkgs.lib.optionalString (config.local.userShell == "zsh") ''
       touch ~/.zshrc
     '';
 

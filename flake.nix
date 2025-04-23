@@ -25,7 +25,7 @@
                   };
                 }
                 {
-                  options = {
+                  options.local = {
                     withNaturalScrolling = nixpkgs.lib.mkOption {
                       description = "Activate natural scrolling direction";
                       type = nixpkgs.lib.types.bool;
@@ -38,7 +38,7 @@
                     };
                   };
 
-                  config = {
+                  config.local = {
                     #hostName = "lix";
                     #userName = "obe";
                     #userPass = "lix";
@@ -76,7 +76,7 @@
 
         xserver = self.lib.nixosVM system [
           modules/xserver
-          modules/xserver/xserver.nix
+          modules/user/xserver.nix
         ];
       });
     };

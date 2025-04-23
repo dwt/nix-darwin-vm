@@ -24,12 +24,12 @@
     environment.sessionVariables = {
       TERMINFO_DIRS = "${pkgs.alacritty.terminfo}/share/terminfo";
     };
-    services.libinput.touchpad.naturalScrolling = config.withNaturalScrolling;
+    services.libinput.touchpad.naturalScrolling = config.local.withNaturalScrolling;
     services.displayManager = {
       enable = true;
       autoLogin = {
         enable = true;
-        user = config.userName;
+        user = config.local.userName;
       };
     };
 
@@ -49,7 +49,7 @@
             ];
         };
         initial_session = {
-          user = config.userName;
+          user = config.local.userName;
           command =
             with pkgs;
             lib.concatStringsSep " " [
@@ -76,7 +76,7 @@
         cp --symbolic-link --update ${./autostart} ~/.config/labwc/autostart
         cp ${./xkbMacKeyboardConfig} ${envFile}
       ''
-      + lib.optionalString config.withNaturalKeyboard ''
+      + lib.optionalString config.local.withNaturalKeyboard ''
         # file is set a=r in nix store, preventing us from adding to it
         chmod u+w ${envFile}
         echo XKB_DEFAULT_LAYOUT=de >> ${envFile}

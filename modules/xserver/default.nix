@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options = {
+  options.local = {
     wm = lib.mkOption {
       description = "The default window manager for the server";
       type = lib.types.str;
@@ -23,20 +23,20 @@
       alacritty
     ];
 
-    services.libinput.touchpad.naturalScrolling = config.withNaturalScrolling;
+    services.libinput.touchpad.naturalScrolling = config.local.withNaturalScrolling;
     services.displayManager = {
       enable = true;
       autoLogin = {
         enable = true;
-        user = config.userName;
+        user = config.local.userName;
       };
-      defaultSession = "none+${config.wm}";
+      defaultSession = "none+${config.local.wm}";
     };
     services.xserver = {
       enable = true;
       xkb = {
-        layout = if config.withNaturalKeyboard then "de" else "us";
-        options = if config.withNaturalKeyboard then "" else "ctrl:nocaps";
+        layout = if config.local.withNaturalKeyboard then "de" else "us";
+        options = if config.local.withNaturalKeyboard then "" else "ctrl:nocaps";
       };
       resolutions = [
         {
@@ -48,7 +48,7 @@
           y = 720;
         }
       ];
-      windowManager."${config.wm}".enable = true;
+      windowManager."${config.local.wm}".enable = true;
       displayManager.lightdm.enable = true;
     };
 
@@ -59,7 +59,7 @@
         cp --symbolic-link --update ${./xprofile} ~/.xprofile
         cp --symbolic-link --update ${./xresources} ~/.Xresources
       ''
-      + lib.optionalString (config.wm == "twm") ''
+      + lib.optionalString (config.local.wm == "twm") ''
         cp --symbolic-link --update ${./twmrc} ~/.twmrc
       '';
   };

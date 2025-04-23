@@ -4,7 +4,7 @@
   config.virtualisation.vmVariant.virtualisation.sharedDirectories = {
     modules = {
       source = "${../shared}";
-      target = "/home/${config.userName}/shared";
+      target = "/home/${config.local.userName}/shared";
       securityModel = "none";
     };
   };
