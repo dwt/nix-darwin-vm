@@ -5,6 +5,10 @@
   ...
 }:
 {
+  imports = [
+    ../user/wayland.nix
+  ];
+
   config = {
     virtualisation.vmVariant.virtualisation.graphics = lib.mkForce true;
     #boot.plymouth.enable = true;

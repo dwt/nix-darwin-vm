@@ -65,15 +65,18 @@
         default = text;
 
         text = self.lib.nixosVM system [
-          modules/autoShutdownOnLoggout.nix
+          modules/text
+          modules/user/text.nix
         ];
 
         wayland = self.lib.nixosVM system [
           modules/wayland
+          modules/user/wayland.nix
         ];
 
         xserver = self.lib.nixosVM system [
           modules/xserver
+          modules/xserver/xserver.nix
         ];
       });
     };
