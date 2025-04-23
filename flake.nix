@@ -22,17 +22,31 @@
                 {
                   _module.args = {
                     inherit inputs;
-                    userName = "obe";
-                    hostName = "lix";
-                    userShell = "zsh";
-                    userPass = "lix";
-                    withNaturalScrolling = true;
-                    withNaturalKeyboard = true;
-                    # REFACT move as default into xserver module? --mh
-                    wm = "twm";
                   };
                 }
                 {
+                  options = {
+                    withNaturalScrolling = nixpkgs.lib.mkOption {
+                      description = "Activate natural scrolling direction";
+                      type = nixpkgs.lib.types.bool;
+                      default = true;
+                    };
+                    withNaturalKeyboard = nixpkgs.lib.mkOption {
+                      description = "Activate 'natural' keyboard layout";
+                      type = nixpkgs.lib.types.bool;
+                      default = true;
+                    };
+                  };
+
+                  config = {
+                    #hostName = "lix";
+                    #userName = "obe";
+                    #userPass = "lix";
+                    #userShell = "zsh";
+                    #withNaturalScrolling = true;
+                    withNaturalKeyboard = false;
+                  };
+
                   imports = [
                     modules/base.nix
                     modules/vm.nix

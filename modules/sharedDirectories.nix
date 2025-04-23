@@ -1,10 +1,10 @@
-{ userName, ... }:
+{ config, ... }:
 {
   # cannot modify files from inside the vm, the permissions make it effectively read only
-  virtualisation.vmVariant.virtualisation.sharedDirectories = {
+  config.virtualisation.vmVariant.virtualisation.sharedDirectories = {
     modules = {
       source = "${../shared}";
-      target = "/home/${userName}/shared";
+      target = "/home/${config.userName}/shared";
       securityModel = "none";
     };
   };
