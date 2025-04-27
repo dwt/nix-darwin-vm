@@ -2,13 +2,13 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-BgkBz4NpV6Kg8XF7cmHDHRVGZYnKbvG0Y4p+jElwxaM=",
-        "path": "/nix/store/v79jbgwmxgiy8m01rhmj4yzn5y507z2c-source",
+        "lastModified": 1745435282,
+        "narHash": "sha256-kPhnQ7mEQ+MRVAKPhmOJI9JrPYwmLr6TA4Nk1YlqpIY=",
+        "path": "/Users/dwt/Code/Projekte/nix/nixpkgs",
         "type": "path"
       },
       "original": {
-        "id": "nixpkgs",
+        "id": "nixpkgs-dev",
         "type": "indirect"
       }
     },
