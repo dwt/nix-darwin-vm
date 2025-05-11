@@ -52,6 +52,7 @@
                     modules/vm.nix
                     modules/sharedDirectories.nix
                     modules/standardPackages.nix
+                    modules/sound.nix
                   ] ++ additionalModules;
                 }
               ];
